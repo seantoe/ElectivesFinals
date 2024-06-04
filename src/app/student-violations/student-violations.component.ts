@@ -15,7 +15,7 @@ export class StudentViolationsComponent implements OnInit {
   studentViolations!: any[];
   newViolation: { studentName: string; violationDate: string; description: string; } = { studentName: '', violationDate: '', description: '' };
   studentName: string = '';
-  violationDate: Date = new Date();
+  violationDate: string = ''; // Use string to match the input type
   description: string = '';
 
   constructor(private dataService: DataService) {
@@ -28,9 +28,10 @@ export class StudentViolationsComponent implements OnInit {
         description: this.description,
         date: this.violationDate
       };
-      console.log('Student Violation:', violationWithStudentName)
+      this.studentViolations.push(violationWithStudentName); // Add the violation to the list
+      console.log('Student Violation:', violationWithStudentName);
       this.studentName = '';
-      this.violationDate = new Date();
+      this.violationDate = ''; // Reset the date
       this.description = ''; 
     }
 
