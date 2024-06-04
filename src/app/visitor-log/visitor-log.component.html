@@ -1,19 +1,26 @@
-<h2>Visitor Log</h2>
-<form (ngSubmit)="addVisitor()">
-  <label for="name">Name:</label>
-  <input type="text" id="name" [(ngModel)]="newVisitor.name" name="name" required>
-  <label for="visitDate">Visit Date:</label>
-  <input type="date" id="visitDate" [(ngModel)]="newVisitor.visitDate" name="visitDate" required>
-  <button type="submit">Add Visitor</button>
-</form>
-
-<ul>
-  <!-- visitor-log.component.html -->
-<div *ngFor="let log of visitorLogs">
-  <p>Name: {{ log.name }}</p>
-  <p>Date: {{ log.visitDate }}</p>
-  <p>Entry Time: {{ log.entryTime }}</p>
-  <!-- Add more properties as needed -->
+<div class="container">
+  <h2>Visitor Log</h2>
+  <form (ngSubmit)="addVisitor()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" id="name" [(ngModel)]="newVisitor.name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="visitDate">Visit Date</label>
+      <input type="date" id="visitDate" [(ngModel)]="newVisitor.visitDate" name="visitDate" required>
+    </div>
+    <div class="form-group">
+      <label for="purpose">Purpose</label>
+      <input type="text" id="purpose" [(ngModel)]="newVisitor.visitorPurpose" name="purpose" required>
+    </div>
+    <button type="submit">Add Visitor</button>
+  </form>
+  <div class="visitor-list">
+    <h3>Visitor List</h3>
+    <div *ngFor="let visitor of visitorLogs" class="visitor-card">
+      <p><strong>Name:</strong> {{ visitor.name }}</p>
+      <p><strong>Date:</strong> {{ visitor.visitDate | date }}</p>
+      <p><strong>Purpose:</strong> {{ visitor.visitorPurpose }}</p>
+    </div>
+  </div>
 </div>
-
-</ul>

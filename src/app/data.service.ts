@@ -12,8 +12,8 @@ export class DataService {
   getVisitorLogs(): Observable<any[]> {
     // Mock data
     return of([
-      { name: 'John Doe', visitDate: '06/04/2024', entryTime: '10:00 AM' },
-      { name: 'Jane Smith', visitDate: '06/04/2024', entryTime: '11:30 AM' }
+      { name: 'John Doe', visitDate: '06/04/2024', entryTime: '10:00 AM', visitorPurpose: 'Enrollment' },
+      { name: 'Jane Smith', visitDate: '06/04/2024', entryTime: '11:30 AM', visitorPurpose: 'Inquiry' }
       // Add more data as needed
     ]);
   }

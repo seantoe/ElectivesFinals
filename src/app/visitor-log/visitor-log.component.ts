@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
   imports: [FormsModule, CommonModule]
 })
 export class VisitorLogComponent implements OnInit {
-  newVisitor: { name: string; visitDate: string } = { name: '', visitDate: '' };
+  newVisitor: { name: string; visitDate: string; visitorPurpose: string } = { name: '', visitDate: '', visitorPurpose: '' };
   visitorName: string = '';
   visitorPurpose: string = '';
   
