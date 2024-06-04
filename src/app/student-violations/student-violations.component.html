@@ -1,1 +1,18 @@
-<p>student-violations works!</p>
+<h2>Student Violations</h2>
+<form (ngSubmit)="addViolation()">
+  <label for="studentName">Student Name:</label>
+  <input type="text" id="studentName" [(ngModel)]="newViolation.studentName" name="studentName" required>
+  <label for="violationDate">Violation Date:</label>
+  <input type="date" id="violationDate" [(ngModel)]="newViolation.violationDate" name="violationDate" required>
+  <label for="description">Description:</label>
+  <input type="text" id="description" [(ngModel)]="newViolation.description" name="description" required>
+  <button type="submit">Add Violation</button>
+</form>
+
+<ul>
+    <div *ngFor="let violation of studentViolations">
+        <p>Student Name: {{ violation.studentName }}</p>
+        <p>Date: {{violation.violationDate }}</p>
+        <p>Violation: {{ violation.description }}</p>
+      </div>
+</ul>
